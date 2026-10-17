@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title description">
+  <title id="title">Task 2 prompt strategy results</title>
+  <desc id="description">Comparison of CRISP, RISEN, and RTF by accuracy, correct predictions, and execution time. RISEN has the highest accuracy at 27.74 percent and 43 correct predictions out of 155.</desc>
+  <style>
+    .title { font: 700 30px Arial, sans-serif; fill: #172033; }
+    .subtitle { font: 16px Arial, sans-serif; fill: #5b6475; }
+    .section { font: 700 20px Arial, sans-serif; fill: #172033; }
+    .label { font: 700 16px Arial, sans-serif; fill: #172033; }
+    .value { font: 700 17px Arial, sans-serif; fill: #172033; }
+    .axis { font: 13px Arial, sans-serif; fill: #697386; }
+    .note { font: 14px Arial, sans-serif; fill: #5b6475; }
+  </style>
+
+  <rect width="1200" height="760" fill="#f7f9fc"/>
+  <rect x="35" y="30" width="1130" height="700" rx="18" fill="#ffffff" stroke="#e4e9f1"/>
+
+  <text x="75" y="82" class="title">Prompting strategy evaluation</text>
+  <text x="75" y="112" class="subtitle">Natural-language-to-SQL results · gpt-5.6-luna · 155 questions</text>
+
+  <rect x="75" y="145" width="1050" height="245" rx="12" fill="#f8fafc"/>
+  <text x="105" y="184" class="section">Accuracy and correct predictions</text>
+
+  <!-- Accuracy chart -->
+  <line x1="230" y1="335" x2="1005" y2="335" stroke="#cfd6e2" stroke-width="1"/>
+  <line x1="230" y1="220" x2="230" y2="335" stroke="#cfd6e2" stroke-width="1"/>
+  <line x1="385" y1="220" x2="385" y2="335" stroke="#e5eaf1"/>
+  <line x1="540" y1="220" x2="540" y2="335" stroke="#e5eaf1"/>
+  <line x1="695" y1="220" x2="695" y2="335" stroke="#e5eaf1"/>
+  <line x1="850" y1="220" x2="850" y2="335" stroke="#e5eaf1"/>
+  <line x1="1005" y1="220" x2="1005" y2="335" stroke="#e5eaf1"/>
+  <text x="230" y="356" class="axis" text-anchor="middle">0%</text>
+  <text x="385" y="356" class="axis" text-anchor="middle">10%</text>
+  <text x="540" y="356" class="axis" text-anchor="middle">20%</text>
+  <text x="695" y="356" class="axis" text-anchor="middle">30%</text>
+  <text x="850" y="356" class="axis" text-anchor="middle">40%</text>
+  <text x="1005" y="356" class="axis" text-anchor="middle">50%</text>
+
+  <text x="105" y="247" class="label">CRISP</text>
+  <rect x="230" y="229" width="370" height="28" rx="6" fill="#6784b7"/>
+  <text x="614" y="249" class="value">23.87% · 37/155</text>
+
+  <text x="105" y="282" class="label">RISEN</text>
+  <rect x="230" y="264" width="430" height="28" rx="6" fill="#e58b4a"/>
+  <text x="674" y="284" class="value">27.74% · 43/155</text>
+
+  <text x="105" y="317" class="label">RTF</text>
+  <rect x="230" y="299" width="370" height="28" rx="6" fill="#6784b7"/>
+  <text x="614" y="319" class="value">23.87% · 37/155</text>
+
+  <rect x="75" y="420" width="1050" height="245" rx="12" fill="#f8fafc"/>
+  <text x="105" y="459" class="section">Execution time</text>
+
+  <!-- Time chart -->
+  <line x1="230" y1="610" x2="1005" y2="610" stroke="#cfd6e2" stroke-width="1"/>
+  <line x1="230" y1="495" x2="230" y2="610" stroke="#cfd6e2" stroke-width="1"/>
+  <line x1="385" y1="495" x2="385" y2="610" stroke="#e5eaf1"/>
+  <line x1="540" y1="495" x2="540" y2="610" stroke="#e5eaf1"/>
+  <line x1="695" y1="495" x2="695" y2="610" stroke="#e5eaf1"/>
+  <line x1="850" y1="495" x2="850" y2="610" stroke="#e5eaf1"/>
+  <line x1="1005" y1="495" x2="1005" y2="610" stroke="#e5eaf1"/>
+  <text x="230" y="631" class="axis" text-anchor="middle">0s</text>
+  <text x="385" y="631" class="axis" text-anchor="middle">20s</text>
+  <text x="540" y="631" class="axis" text-anchor="middle">40s</text>
+  <text x="695" y="631" class="axis" text-anchor="middle">60s</text>
+  <text x="850" y="631" class="axis" text-anchor="middle">80s</text>
+  <text x="1005" y="631" class="axis" text-anchor="middle">100s</text>
+
+  <text x="105" y="522" class="label">CRISP</text>
+  <rect x="230" y="504" width="434" height="28" rx="6" fill="#6784b7"/>
+  <text x="678" y="524" class="value">56s</text>
+
+  <text x="105" y="557" class="label">RISEN</text>
+  <rect x="230" y="539" width="535" height="28" rx="6" fill="#e58b4a"/>
+  <text x="779" y="559" class="value">69s</text>
+
+  <text x="105" y="592" class="label">RTF</text>
+  <rect x="230" y="574" width="488" height="28" rx="6" fill="#6784b7"/>
+  <text x="732" y="594" class="value">63s</text>
+
+  <circle cx="105" cy="683" r="6" fill="#e58b4a"/>
+  <text x="120" y="688" class="note">RISEN achieved the highest accuracy, with 6 more correct predictions than CRISP and RTF.</text>
+</svg>

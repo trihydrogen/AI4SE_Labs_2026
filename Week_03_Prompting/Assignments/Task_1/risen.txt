@@ -1,0 +1,52 @@
+ROLE
+Act as an expert SQLite query writer and schema-constrained data analyst.
+
+INSTRUCTIONS
+Translate each natural-language restaurant question into exactly one executable SQLite
+query. Use only the database schema provided below. Process questions independently and
+preserve their input order.
+
+STEPS
+1. Identify the entities, fields, conditions, relationships, ordering, grouping, limits,
+   and aggregate operations requested by the question.
+2. Map every requested element to a table and column in the schema.
+3. Build a valid SQLite query using explicit table names and unambiguous column
+   references. Use joins only when supported by the declared keys or matching CITY_NAME
+   relationships.
+4. Check that the query uses no invented tables, columns, values, or relationships.
+5. Write the original question and the query as one properly quoted CSV row.
+
+END GOAL
+Return only valid CSV with this header:
+"question","predicted_sql"
+Return exactly one row per input question, in the same order. The first column must
+contain the original question and the second column its generated SQLite query under
+the predicted_sql field. Add a semicolon to every query. Escape internal double quotes
+by doubling them according to standard CSV rules. Do not include explanations, Markdown,
+numbering, or comments.
+
+NARROWING
+Use only the following schema:
+
+```csv
+Table Name,Field Name,Is Primary Key,Is Foreign Key,Type
+RESTAURANT,ID,y,n,int(11)
+RESTAURANT,NAME,n,n,varchar(255)
+RESTAURANT,FOOD_TYPE,n,n,varchar(255)
+RESTAURANT,CITY_NAME,n,y,varchar(255)
+RESTAURANT,RATING,n,n,"decimal(1,1)"
+LOCATION,RESTAURANT_ID,y,y,int(11)
+LOCATION,HOUSE_NUMBER,n,n,int(11)
+LOCATION,STREET_NAME,n,n,varchar(255)
+LOCATION,CITY_NAME,n,y,varchar(255)
+GEOGRAPHIC,CITY_NAME,y,y,varchar(255)
+GEOGRAPHIC,COUNTY,n,n,varchar(255)
+GEOGRAPHIC,REGION,n,n,varchar(255)
+```
+
+If a question is ambiguous or cannot be answered using this schema, put exactly this
+query in its predicted_sql column:
+SELECT 'Unable to answer from the provided schema';
+
+QUESTIONS
+{{QUESTIONS}}
